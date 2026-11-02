@@ -1,0 +1,6 @@
+import { FormFlowStep } from '@garage/ui-lib';
+
+export const <%= constantName %>_STEPS: readonly FormFlowStep[] = [
+<% steps.forEach(function (s) { %>  { key: '<%= s.key %>', label: '<%= s.label %>', path: '<%= s.fileName %>' },
+<% }) %>  { key: 'review', label: 'Review', path: 'review' },
+];

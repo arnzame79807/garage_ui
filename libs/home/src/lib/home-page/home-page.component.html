@@ -1,0 +1,17 @@
+<section class="hero garage-container">
+  <h1>Welcome to Garage</h1>
+  <p class="lede">Manage your vehicles, grant applications and reports in one secure workspace.</p>
+  @if (auth.isAuthenticated()) {
+    <a garageButton size="lg" routerLink="/dashboard">Go to your dashboard</a>
+  } @else {
+    <a garageButton size="lg" routerLink="/login">Sign in</a>
+  }
+</section>
+
+<section class="highlights garage-container" aria-label="Highlights">
+  @for (item of highlights; track item.title) {
+    <garage-card [heading]="item.title">
+      <p>{{ item.body }}</p>
+    </garage-card>
+  }
+</section>

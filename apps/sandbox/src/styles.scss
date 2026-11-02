@@ -1,0 +1,23 @@
+// Sandbox-only global styles.
+.guide-section {
+  display: grid;
+  gap: var(--garage-space-4);
+  margin-bottom: var(--garage-space-8);
+}
+
+.guide-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--garage-space-3);
+}
+
+.guide-code {
+  padding: var(--garage-space-3);
+  border-radius: var(--garage-radius-md);
+  background: var(--garage-color-surface-sunken);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--garage-font-size-sm);
+  white-space: pre;
+  overflow-x: auto;
+}

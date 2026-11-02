@@ -1,0 +1,26 @@
+.hero {
+  padding: var(--garage-space-12) 0 var(--garage-space-8);
+
+  h1 {
+    margin: 0 0 var(--garage-space-3);
+    font-size: var(--garage-font-size-2xl);
+  }
+}
+
+.lede {
+  max-width: 40rem;
+  margin: 0 0 var(--garage-space-6);
+  color: var(--garage-color-text-muted);
+  font-size: var(--garage-font-size-lg);
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--garage-space-4);
+  padding-bottom: var(--garage-space-12);
+
+  p {
+    margin: 0;
+  }
+}

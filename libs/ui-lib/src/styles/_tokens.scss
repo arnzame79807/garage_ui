@@ -1,0 +1,63 @@
+// Garage design tokens. Components consume these as CSS custom properties so
+// themes (dark mode, agency branding) are a matter of redefining variables.
+
+:root {
+  // Color
+  --garage-color-primary: #1f4fb8;
+  --garage-color-primary-strong: #173c8c;
+  --garage-color-on-primary: #ffffff;
+  --garage-color-text: #1b1f27;
+  --garage-color-text-muted: #5a6272;
+  --garage-color-bg: #f4f5f7;
+  --garage-color-surface: #ffffff;
+  --garage-color-surface-sunken: #eceef2;
+  --garage-color-border: #dde1e8;
+  --garage-color-border-strong: #a9b0bd;
+  --garage-color-focus: #f2a900;
+  --garage-color-info: #1f6fd1;
+  --garage-color-success: #1a7f4b;
+  --garage-color-warning: #b26a00;
+  --garage-color-danger: #b42318;
+
+  // Typography
+  --garage-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --garage-font-size-sm: 0.875rem;
+  --garage-font-size-md: 1rem;
+  --garage-font-size-lg: 1.25rem;
+  --garage-font-size-xl: 1.75rem;
+  --garage-font-size-2xl: 2.5rem;
+  --garage-line-height: 1.5;
+
+  // Spacing (4px scale)
+  --garage-space-1: 0.25rem;
+  --garage-space-2: 0.5rem;
+  --garage-space-3: 0.75rem;
+  --garage-space-4: 1rem;
+  --garage-space-6: 1.5rem;
+  --garage-space-8: 2rem;
+  --garage-space-12: 3rem;
+
+  // Shape & depth
+  --garage-radius-sm: 4px;
+  --garage-radius-md: 6px;
+  --garage-radius-lg: 10px;
+  --garage-radius-pill: 999px;
+  --garage-shadow-sm: 0 1px 2px rgb(16 24 40 / 6%), 0 1px 3px rgb(16 24 40 / 10%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --garage-color-primary: #7aa2ff;
+    --garage-color-primary-strong: #a3bfff;
+    --garage-color-on-primary: #0d1424;
+    --garage-color-text: #e8eaef;
+    --garage-color-text-muted: #a3aab8;
+    --garage-color-bg: #0f1218;
+    --garage-color-surface: #181c24;
+    --garage-color-surface-sunken: #222833;
+    --garage-color-border: #2c3340;
+    --garage-color-border-strong: #4a5263;
+    --garage-color-danger: #ff8a80;
+    --garage-color-success: #6fd3a0;
+  }
+}

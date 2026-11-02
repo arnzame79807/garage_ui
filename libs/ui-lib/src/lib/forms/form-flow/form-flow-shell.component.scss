@@ -1,0 +1,51 @@
+.flow {
+  display: grid;
+  gap: var(--garage-space-6);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+}
+
+.progress {
+  margin: var(--garage-space-1) 0 0;
+  color: var(--garage-color-text-muted);
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--garage-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.step {
+  counter-increment: step;
+  display: flex;
+  align-items: center;
+  gap: var(--garage-space-2);
+  padding: var(--garage-space-2) var(--garage-space-3);
+  border-radius: var(--garage-radius-pill);
+  background: var(--garage-color-surface-sunken);
+  color: var(--garage-color-text-muted);
+  font-size: var(--garage-font-size-sm);
+
+  &::before {
+    content: counter(step);
+    font-weight: 700;
+  }
+
+  &--active {
+    background: var(--garage-color-primary);
+    color: var(--garage-color-on-primary);
+  }
+
+  &--done a {
+    color: var(--garage-color-primary);
+  }
+}

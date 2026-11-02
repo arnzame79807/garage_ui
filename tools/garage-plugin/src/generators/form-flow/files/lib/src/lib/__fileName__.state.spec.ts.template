@@ -1,0 +1,12 @@
+import { <%= className %>State } from './<%= fileName %>.state';
+
+describe('<%= className %>State', () => {
+  it('is complete once every data-entry step is complete', () => {
+    const state = new <%= className %>State();
+    expect(state.isComplete()).toBe(false);
+<% steps.forEach(function (s) { %>
+    state.completeStep('<%= s.key %>', { <%= s.propertyName %>: { example: '<%= s.label %>' } });<% }) %>
+
+    expect(state.isComplete()).toBe(true);
+  });
+});

@@ -1,0 +1,9 @@
+<% steps.forEach(function (s) { %>
+/** Values captured on the "<%= s.label %>" step. TODO: replace `example` with real fields. */
+export interface <%= s.className %>StepValue {
+  example: string;
+}
+<% }) %>
+export interface <%= className %>Data {
+<% steps.forEach(function (s) { %>  <%= s.propertyName %>: <%= s.className %>StepValue;
+<% }) %>}

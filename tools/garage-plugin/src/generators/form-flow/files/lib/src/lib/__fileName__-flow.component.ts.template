@@ -1,0 +1,22 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormFlowShellComponent } from '@garage/ui-lib';
+import { <%= constantName %>_STEPS } from './<%= fileName %>.steps';
+
+@Component({
+  selector: 'garage-<%= fileName %>-flow',
+  imports: [FormFlowShellComponent],
+  template: `
+    <div class="garage-container page">
+      <garage-form-flow-shell title="<%= title %>" [steps]="steps" />
+    </div>
+  `,
+  styles: `
+    .page {
+      padding: var(--garage-space-8) 0;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class <%= className %>FlowComponent {
+  protected readonly steps = <%= constantName %>_STEPS;
+}

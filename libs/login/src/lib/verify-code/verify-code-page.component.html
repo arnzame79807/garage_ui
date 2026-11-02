@@ -1,0 +1,22 @@
+<h1>Verify your identity</h1>
+<p>We sent a 6-digit code to {{ destination }}.</p>
+
+@if (error()) {
+  <garage-alert tone="error">{{ error() }}</garage-alert>
+}
+
+<form class="garage-stack" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <garage-text-field
+    label="Verification code"
+    inputmode="numeric"
+    autocomplete="one-time-code"
+    formControlName="code"
+    [messages]="messages"
+  />
+  <button garageButton type="submit" [block]="true" [disabled]="submitting()">
+    {{ submitting() ? 'Verifying…' : 'Verify and sign in' }}
+  </button>
+  <button garageButton type="button" variant="ghost" (click)="startOver()">
+    Use a different account
+  </button>
+</form>

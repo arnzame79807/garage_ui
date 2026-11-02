@@ -1,0 +1,38 @@
+import { inject } from '@angular/core';
+import { CanActivateFn, Route, Router } from '@angular/router';
+import { <%= className %>FlowComponent } from './<%= fileName %>-flow.component';
+import { <%= className %>State } from './<%= fileName %>.state';
+<% steps.forEach(function (s) { %>import { <%= s.className %>StepComponent } from './steps/<%= s.fileName %>/<%= s.fileName %>-step.component';
+<% }) %>import { ReviewStepComponent } from './steps/review/review-step.component';
+
+/** Blocks deep links to a step until the step before it is complete. */
+function requireStep(stepKey: string): CanActivateFn {
+  return (route) => {
+    if (inject(<%= className %>State).isStepComplete(stepKey)) return true;
+    const flowRoot = route.parent?.pathFromRoot.flatMap((r) => r.url.map((s) => s.path)) ?? [];
+    return inject(Router).createUrlTree(['/', ...flowRoot]);
+  };
+}
+
+export const <%= propertyName %>Routes: Route[] = [
+  {
+    path: '',
+    component: <%= className %>FlowComponent,
+    providers: [<%= className %>State],
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: '<%= steps[0].fileName %>' },
+<% steps.forEach(function (s, i) { %>      {
+        path: '<%= s.fileName %>',
+        component: <%= s.className %>StepComponent,<% if (i > 0) { %>
+        canActivate: [requireStep('<%= steps[i - 1].key %>')],<% } %>
+        title: '<%= s.label %> · <%= title %>',
+      },
+<% }) %>      {
+        path: 'review',
+        component: ReviewStepComponent,
+        canActivate: [requireStep('<%= steps[steps.length - 1].key %>')],
+        title: 'Review · <%= title %>',
+      },
+    ],
+  },
+];

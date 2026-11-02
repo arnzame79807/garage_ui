@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "form-flow": {
+      "factory": "./src/generators/form-flow/generator",
+      "schema": "./src/generators/form-flow/schema.json",
+      "description": "Scaffold a routed, multi-step form flow library and register it with an app."
+    }
+  }
+}

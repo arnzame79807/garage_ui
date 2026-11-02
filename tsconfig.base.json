@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2022", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@garage/dashboard": ["libs/dashboard/src/index.ts"],
+      "@garage/home": ["libs/home/src/index.ts"],
+      "@garage/login": ["libs/login/src/index.ts"],
+      "@garage/plugin": ["tools/garage-plugin/src/index.ts"],
+      "@garage/ui-lib": ["libs/ui-lib/src/index.ts"],
+      "@garage/ui-lib/testing": ["libs/ui-lib/src/testing/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

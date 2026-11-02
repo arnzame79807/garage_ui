@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "GarageFormFlow",
+  "title": "Garage form flow",
+  "description": "Scaffold a routed, multi-step form flow library and register it with an app.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Flow name, e.g. vehicle-registration.",
+      "$default": { "$source": "argv", "index": 0 },
+      "x-prompt": "What is the name of the form flow (e.g. vehicle-registration)?",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9-]*$"
+    },
+    "steps": {
+      "type": "string",
+      "description": "Comma-separated data-entry steps. A review step is always appended.",
+      "default": "details",
+      "x-prompt": "Which steps should the flow have (comma-separated, e.g. owner,vehicle,documents)?"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title shown above the stepper. Defaults to the name in Title Case."
+    },
+    "directory": {
+      "type": "string",
+      "description": "Parent folder for the new library.",
+      "default": "libs/forms"
+    },
+    "app": {
+      "type": "string",
+      "description": "App whose app.routes.ts gets the new route. Pass an empty string to skip.",
+      "default": "garage"
+    },
+    "route": {
+      "type": "string",
+      "description": "URL segment for the flow. Defaults to the kebab-case name."
+    },
+    "guarded": {
+      "type": "boolean",
+      "description": "Protect the flow with authGuard.",
+      "default": true
+    },
+    "e2e": {
+      "type": "boolean",
+      "description": "Generate a Playwright spec in the app's e2e project.",
+      "default": true
+    },
+    "skipFormat": {
+      "type": "boolean",
+      "description": "Skip running Prettier on generated files.",
+      "default": false,
+      "x-priority": "internal"
+    }
+  },
+  "required": ["name"]
+}

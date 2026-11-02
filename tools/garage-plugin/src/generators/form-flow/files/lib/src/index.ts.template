@@ -1,0 +1,4 @@
+export * from './lib/<%= fileName %>.model';
+export * from './lib/<%= fileName %>.routes';
+export * from './lib/<%= fileName %>.state';
+export * from './lib/<%= fileName %>.steps';

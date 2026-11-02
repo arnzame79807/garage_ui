@@ -1,0 +1,27 @@
+<h1>Sign in</h1>
+
+@if (error()) {
+  <garage-alert tone="error">{{ error() }}</garage-alert>
+}
+
+<form class="garage-stack" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <garage-text-field label="Email" type="email" autocomplete="username" formControlName="email" />
+  <garage-text-field
+    label="Password"
+    type="password"
+    autocomplete="current-password"
+    formControlName="password"
+  />
+  <button garageButton type="submit" [block]="true" [disabled]="submitting()">
+    {{ submitting() ? 'Signing in…' : 'Continue' }}
+  </button>
+</form>
+
+<p><a routerLink="forgot-password">Forgot your password?</a></p>
+
+@if (demo) {
+  <garage-alert tone="info">
+    Demo account: <strong>{{ demo.email }}</strong> / <strong>{{ demo.password }}</strong>,
+    code <strong>{{ demo.otp }}</strong>
+  </garage-alert>
+}

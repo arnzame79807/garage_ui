@@ -1,0 +1,46 @@
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ButtonComponent, TextFieldComponent } from '@garage/ui-lib';
+import { <%= className %>State } from '../../<%= fileName %>.state';
+
+@Component({
+  selector: 'garage-<%= fileName %>-<%= step.fileName %>-step',
+  imports: [ReactiveFormsModule, RouterLink, ButtonComponent, TextFieldComponent],
+  template: `
+    <h2><%= step.label %></h2>
+    <form class="garage-stack" [formGroup]="form" (ngSubmit)="next()" novalidate>
+      <!-- TODO: replace the example field with this step's real fields -->
+      <garage-text-field label="Example" formControlName="example" />
+      <div class="actions">
+<% if (step.prevPath) { %>        <a garageButton variant="secondary" [routerLink]="['..', '<%= step.prevPath %>']">Back</a>
+<% } %>        <button garageButton type="submit">Continue</button>
+      </div>
+    </form>
+  `,
+  styles: `
+    .actions {
+      display: flex;
+      gap: var(--garage-space-3);
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class <%= step.className %>StepComponent {
+  private readonly state = inject(<%= className %>State);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+
+  protected readonly form = inject(NonNullableFormBuilder).group({
+    example: [this.state.data().<%= step.propertyName %>?.example ?? '', Validators.required],
+  });
+
+  protected next(): void {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+    this.state.completeStep('<%= step.key %>', { <%= step.propertyName %>: this.form.getRawValue() });
+    this.router.navigate(['..', '<%= step.nextPath %>'], { relativeTo: this.route });
+  }
+}

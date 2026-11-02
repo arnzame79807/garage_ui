@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--garage-space-1);
+}
+
+.label {
+  font-weight: 600;
+}
+
+.hint {
+  margin: 0;
+  color: var(--garage-color-text-muted);
+  font-size: var(--garage-font-size-sm);
+}
+
+.input {
+  min-height: 2.75rem;
+  padding: 0 var(--garage-space-3);
+  border: 1px solid var(--garage-color-border-strong);
+  border-radius: var(--garage-radius-md);
+  background: var(--garage-color-surface);
+  color: var(--garage-color-text);
+  font: inherit;
+
+  &:focus-visible {
+    outline: 3px solid var(--garage-color-focus);
+    outline-offset: 1px;
+  }
+
+  &[aria-invalid='true'] {
+    border-color: var(--garage-color-danger);
+  }
+
+  &:disabled {
+    background: var(--garage-color-surface-sunken);
+  }
+}
+
+.error {
+  min-height: 1.25rem;
+  margin: 0;
+  color: var(--garage-color-danger);
+  font-size: var(--garage-font-size-sm);
+}

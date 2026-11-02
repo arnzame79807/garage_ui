@@ -1,0 +1,58 @@
+{
+  "name": "garage",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "garage",
+  "sourceRoot": "apps/garage/src",
+  "tags": ["type:app"],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/garage",
+        "browser": "apps/garage/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/garage/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [{ "glob": "**/*", "input": "apps/garage/public" }],
+        "styles": ["libs/ui-lib/src/styles/garage.scss", "apps/garage/src/styles.scss"]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            { "type": "initial", "maximumWarning": "500kb", "maximumError": "1mb" },
+            { "type": "anyComponentStyle", "maximumWarning": "4kb", "maximumError": "8kb" }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "options": { "port": 4200 },
+      "configurations": {
+        "production": { "buildTarget": "garage:build:production" },
+        "development": { "buildTarget": "garage:build:development" }
+      },
+      "defaultConfiguration": "development"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "garage:build",
+        "port": 4200,
+        "staticFilePath": "dist/apps/garage/browser",
+        "spa": true
+      }
+    }
+  }
+}

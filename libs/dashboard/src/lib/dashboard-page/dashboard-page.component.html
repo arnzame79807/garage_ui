@@ -1,0 +1,14 @@
+<div class="garage-container page">
+  <h1>Welcome back, {{ firstName() }}</h1>
+
+  <garage-alert tone="info">You have 1 report due in the next 30 days.</garage-alert>
+
+  <section class="stats" aria-label="Summary">
+    @for (stat of stats; track stat.label) {
+      <garage-card>
+        <p class="stat-value">{{ stat.value }}</p>
+        <p class="stat-label">{{ stat.label }}</p>
+      </garage-card>
+    }
+  </section>
+</div>

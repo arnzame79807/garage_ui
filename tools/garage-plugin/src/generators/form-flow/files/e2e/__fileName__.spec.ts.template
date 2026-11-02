@@ -1,0 +1,18 @@
+import { expect, test } from '@playwright/test';
+<% if (guarded) { %>import { signIn } from './support/auth';
+<% } %>
+test.describe('<%= title %> form flow', () => {
+  test('walks every step and submits', async ({ page }) => {
+<% if (guarded) { %>    await signIn(page);
+<% } %>    await page.goto('/<%= routePath %>');
+    await expect(page.getByRole('heading', { level: 1, name: '<%= title %>' })).toBeVisible();
+<% steps.forEach(function (s) { %>
+    await expect(page.getByRole('heading', { level: 2, name: '<%= s.label %>' })).toBeVisible();
+    await page.getByLabel('Example').fill('<%= s.label %> value');
+    await page.getByRole('button', { name: 'Continue' }).click();
+<% }) %>
+    await expect(page.getByRole('heading', { level: 2, name: 'Review' })).toBeVisible();
+    await page.getByRole('button', { name: 'Submit' }).click();
+    await expect(page.getByText('Submitted. Thank you!')).toBeVisible();
+  });
+});

@@ -1,0 +1,18 @@
+import { Injectable } from '@angular/core';
+import { FormFlowState } from '@garage/ui-lib';
+import { Observable, of } from 'rxjs';
+import { <%= className %>Data } from './<%= fileName %>.model';
+import { <%= constantName %>_STEPS } from './<%= fileName %>.steps';
+
+/** Provided on the flow's route, so every step shares one instance. */
+@Injectable()
+export class <%= className %>State extends FormFlowState<<%= className %>Data> {
+  protected readonly stepKeys = <%= constantName %>_STEPS.filter((s) => s.key !== 'review').map(
+    (s) => s.key,
+  );
+
+  /** TODO: replace with a call to the real API. */
+  submit(): Observable<void> {
+    return of(undefined);
+  }
+}
