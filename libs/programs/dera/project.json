@@ -1,0 +1,9 @@
+{
+  "name": "dera",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/programs/dera/src",
+  "prefix": "garage",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:dera"],
+  "targets": {}
+}

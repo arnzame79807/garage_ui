@@ -1,0 +1,9 @@
+{
+  "name": "csb",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/programs/csb/src",
+  "prefix": "garage",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:csb"],
+  "targets": {}
+}

@@ -13,10 +13,18 @@ export type AlertTone = 'info' | 'success' | 'warning' | 'error';
       border-radius: var(--garage-radius-sm);
       background: color-mix(in srgb, var(--tone) 10%, var(--garage-color-surface));
     }
-    :host(.garage-alert--info) { --tone: var(--garage-color-info); }
-    :host(.garage-alert--success) { --tone: var(--garage-color-success); }
-    :host(.garage-alert--warning) { --tone: var(--garage-color-warning); }
-    :host(.garage-alert--error) { --tone: var(--garage-color-danger); }
+    :host(.garage-alert--info) {
+      --tone: var(--garage-color-info);
+    }
+    :host(.garage-alert--success) {
+      --tone: var(--garage-color-success);
+    }
+    :host(.garage-alert--warning) {
+      --tone: var(--garage-color-warning);
+    }
+    :host(.garage-alert--error) {
+      --tone: var(--garage-color-danger);
+    }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {

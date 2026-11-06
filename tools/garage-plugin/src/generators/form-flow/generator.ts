@@ -186,7 +186,12 @@ function addE2eSpec(tree: Tree, options: NormalizedOptions, vars: object): void 
     logger.warn(`No ${e2eRoot} project found; skipping e2e spec.`);
     return;
   }
-  generateFiles(tree, path.join(__dirname, 'files', 'e2e'), joinPathFragments(e2eRoot, 'src'), vars);
+  generateFiles(
+    tree,
+    path.join(__dirname, 'files', 'e2e'),
+    joinPathFragments(e2eRoot, 'src'),
+    vars,
+  );
 }
 
 export default formFlowGenerator;

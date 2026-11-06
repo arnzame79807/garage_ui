@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router<% if (step.prevPath) { %>, RouterLink<% } %> } from '@angular/router';
 import { ButtonComponent, TextFieldComponent } from '@garage/ui-lib';
 import { <%= className %>State } from '../../<%= fileName %>.state';
 
 @Component({
   selector: 'garage-<%= fileName %>-<%= step.fileName %>-step',
-  imports: [ReactiveFormsModule, RouterLink, ButtonComponent, TextFieldComponent],
+  imports: [ReactiveFormsModule, <% if (step.prevPath) { %>RouterLink, <% } %>ButtonComponent, TextFieldComponent],
   template: `
     <h2><%= step.label %></h2>
     <form class="garage-stack" [formGroup]="form" (ngSubmit)="next()" novalidate>

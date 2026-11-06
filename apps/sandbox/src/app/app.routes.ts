@@ -10,7 +10,7 @@ export const GUIDE_PAGES: GuidePage[] = [
   { path: 'tokens', label: 'Design tokens' },
   { path: 'buttons', label: 'Buttons' },
   { path: 'forms', label: 'Form fields' },
-  { path: 'feedback', label: 'Cards & alerts' },
+  { path: 'feedback', label: 'Cards, alerts & catalog' },
   { path: 'form-flow', label: 'Form flow' },
 ];
 

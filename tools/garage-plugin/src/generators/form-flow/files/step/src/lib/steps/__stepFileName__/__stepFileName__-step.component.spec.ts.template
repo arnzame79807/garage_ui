@@ -10,6 +10,7 @@ describe('<%= step.className %>StepComponent', () => {
     });
     const navigate = jest.spyOn(TestBed.inject(Router), 'navigate').mockResolvedValue(true);
     const fixture = TestBed.createComponent(<%= step.className %>StepComponent);
+    fixture.detectChanges();
     await fixture.whenStable();
     const el: HTMLElement = fixture.nativeElement;
     const submit = () => {

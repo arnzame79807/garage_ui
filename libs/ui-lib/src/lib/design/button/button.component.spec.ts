@@ -14,6 +14,7 @@ class HostComponent {}
 describe('ButtonComponent', () => {
   it('applies variant and size classes to the native element', async () => {
     const fixture = TestBed.createComponent(HostComponent);
+    fixture.detectChanges();
     await fixture.whenStable();
     const [button, link] = fixture.nativeElement.querySelectorAll('.garage-button');
 

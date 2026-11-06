@@ -33,7 +33,9 @@ import { AlertComponent, ButtonComponent, TextFieldComponent } from '@garage/ui-
       </div>
     </form>
     @if (submitted(); as value) {
-      <garage-alert tone="success">Valid! <code>{{ value | json }}</code></garage-alert>
+      <garage-alert tone="success"
+        >Valid! <code>{{ value | json }}</code></garage-alert
+      >
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

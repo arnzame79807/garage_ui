@@ -22,11 +22,7 @@ export interface AuthSession {
 
 export type AuthStatus = 'anonymous' | 'challenged' | 'authenticated';
 
-export type AuthErrorCode =
-  | 'invalid-credentials'
-  | 'invalid-code'
-  | 'no-challenge'
-  | 'unknown';
+export type AuthErrorCode = 'invalid-credentials' | 'invalid-code' | 'no-challenge' | 'unknown';
 
 export class AuthError extends Error {
   constructor(

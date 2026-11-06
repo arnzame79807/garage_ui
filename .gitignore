@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+tmp/
+out-tsc/
+*.tsbuildinfo
+
+# Angular & Nx caches
+.angular/
+.nx/cache/
+.nx/workspace-data/
+.sass-cache/
+
+# Test output
+coverage/
+test-output/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Lint caches
+.eslintcache
+.stylelintcache
+
+# Environment & secrets (commit a .env.example instead)
+.env
+.env.*
+!.env.example
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs and editors (shared VS Code recommendations stay tracked)
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+.history/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

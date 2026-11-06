@@ -1,0 +1,9 @@
+{
+  "name": "chdv",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/programs/chdv/src",
+  "prefix": "garage",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:chdv"],
+  "targets": {}
+}

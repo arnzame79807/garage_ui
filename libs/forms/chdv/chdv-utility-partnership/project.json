@@ -1,0 +1,8 @@
+{
+  "name": "chdv-utility-partnership",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/forms/chdv/chdv-utility-partnership/src",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:forms", "program:chdv"],
+  "targets": {}
+}

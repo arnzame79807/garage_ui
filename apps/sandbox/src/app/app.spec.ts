@@ -7,6 +7,7 @@ describe('Sandbox App', () => {
   it('lists every guide page in the sidebar', async () => {
     TestBed.configureTestingModule({ imports: [App], providers: [provideRouter([])] });
     const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
     await fixture.whenStable();
 
     const links = (fixture.nativeElement as HTMLElement).querySelectorAll('nav.sidebar a');

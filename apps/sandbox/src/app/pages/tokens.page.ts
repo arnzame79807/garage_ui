@@ -1,8 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 const COLORS = [
-  'primary', 'primary-strong', 'text', 'text-muted', 'bg', 'surface', 'surface-sunken',
-  'border', 'border-strong', 'focus', 'info', 'success', 'warning', 'danger',
+  'primary',
+  'primary-strong',
+  'text',
+  'text-muted',
+  'bg',
+  'surface',
+  'surface-sunken',
+  'border',
+  'border-strong',
+  'focus',
+  'info',
+  'success',
+  'warning',
+  'danger',
 ];
 const SPACE = ['1', '2', '3', '4', '6', '8', '12'];
 const TYPE = ['sm', 'md', 'lg', 'xl', '2xl'];
@@ -17,7 +29,9 @@ const TYPE = ['sm', 'md', 'lg', 'xl', '2xl'];
         @for (c of colors; track c) {
           <figure class="swatch">
             <div class="chip" [style.background]="'var(--garage-color-' + c + ')'"></div>
-            <figcaption><code>--garage-color-{{ c }}</code></figcaption>
+            <figcaption>
+              <code>--garage-color-{{ c }}</code>
+            </figcaption>
           </figure>
         }
       </div>

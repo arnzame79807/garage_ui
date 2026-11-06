@@ -1,0 +1,8 @@
+{
+  "name": "chdv-eligibility",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/forms/chdv/chdv-eligibility/src",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:forms", "program:chdv"],
+  "targets": {}
+}

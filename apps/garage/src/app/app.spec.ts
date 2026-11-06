@@ -9,6 +9,7 @@ async function render(signedIn: boolean) {
     providers: [provideRouter([]), provideTestAuth({ signedIn })],
   });
   const fixture = TestBed.createComponent(App);
+  fixture.detectChanges();
   await fixture.whenStable();
   return fixture;
 }
@@ -26,6 +27,7 @@ describe('App', () => {
 
     const navigate = jest.spyOn(TestBed.inject(Router), 'navigateByUrl').mockResolvedValue(true);
     (el.querySelector('button') as HTMLButtonElement).click();
+    fixture.detectChanges();
     await fixture.whenStable();
 
     expect(el.textContent).toContain('Sign in');

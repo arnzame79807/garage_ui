@@ -30,6 +30,7 @@
   background: var(--garage-color-primary);
   color: var(--garage-color-on-primary);
 }
+
 :host(.garage-button--primary:hover:not([disabled])) {
   background: var(--garage-color-primary-strong);
 }
@@ -39,6 +40,7 @@
   border-color: var(--garage-color-border-strong);
   color: var(--garage-color-text);
 }
+
 :host(.garage-button--secondary:hover:not([disabled])) {
   background: var(--garage-color-surface-sunken);
 }
@@ -47,6 +49,7 @@
   background: transparent;
   color: var(--garage-color-primary);
 }
+
 :host(.garage-button--ghost:hover:not([disabled])) {
   background: var(--garage-color-surface-sunken);
 }
@@ -61,10 +64,12 @@
   padding: 0 var(--garage-space-3);
   font-size: var(--garage-font-size-sm);
 }
+
 :host(.garage-button--lg) {
   min-height: 3rem;
   padding: 0 var(--garage-space-6);
 }
+
 :host(.garage-button--block) {
   display: flex;
   width: 100%;

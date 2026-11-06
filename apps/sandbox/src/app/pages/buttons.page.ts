@@ -6,7 +6,10 @@ import { ButtonComponent, ButtonSize, ButtonVariant } from '@garage/ui-lib';
   imports: [ButtonComponent],
   template: `
     <h1>Buttons</h1>
-    <p>Apply <code>garageButton</code> to a native <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code>.</p>
+    <p>
+      Apply <code>garageButton</code> to a native <code>&lt;button&gt;</code> or
+      <code>&lt;a&gt;</code>.
+    </p>
     <section class="guide-section">
       <h2>Variants</h2>
       <div class="guide-row">

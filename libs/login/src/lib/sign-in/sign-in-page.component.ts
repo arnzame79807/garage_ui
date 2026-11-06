@@ -33,9 +33,8 @@ export class SignInPageComponent {
   protected readonly error = signal<string | null>(null);
 
   /** Only shown while the in-memory mock backend is wired up. */
-  protected readonly demo = inject(AuthBackend) instanceof MockAuthBackend
-    ? { ...DEMO_CREDENTIALS, otp: DEMO_OTP }
-    : null;
+  protected readonly demo =
+    inject(AuthBackend) instanceof MockAuthBackend ? { ...DEMO_CREDENTIALS, otp: DEMO_OTP } : null;
 
   protected submit(): void {
     if (this.form.invalid) {

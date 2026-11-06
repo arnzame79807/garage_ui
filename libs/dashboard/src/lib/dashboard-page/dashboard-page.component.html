@@ -11,4 +11,18 @@
       </garage-card>
     }
   </section>
+
+  <section class="programs" aria-labelledby="programs-heading">
+    <h2 id="programs-heading">Grant programs</h2>
+    <div class="program-grid">
+      @for (program of programs; track program.code) {
+        <garage-card>
+          <h3>
+            <a [routerLink]="program.path">{{ program.name }}</a>
+          </h3>
+          <p>{{ program.summary }}</p>
+        </garage-card>
+      }
+    </div>
+  </section>
 </div>

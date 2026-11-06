@@ -8,6 +8,7 @@ async function render(signedIn: boolean) {
     providers: [provideRouter([]), provideTestAuth({ signedIn })],
   });
   const fixture = TestBed.createComponent(HomePageComponent);
+  fixture.detectChanges();
   await fixture.whenStable();
   return fixture.nativeElement as HTMLElement;
 }

@@ -15,7 +15,35 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@garage/chdv": ["libs/programs/chdv/src/index.ts"],
+      "@garage/chdv-eligibility": ["libs/forms/chdv/chdv-eligibility/src/index.ts"],
+      "@garage/chdv-project-reporting": ["libs/forms/chdv/chdv-project-reporting/src/index.ts"],
+      "@garage/chdv-utility-partnership": ["libs/forms/chdv/chdv-utility-partnership/src/index.ts"],
+      "@garage/clean-ports": ["libs/programs/clean-ports/src/index.ts"],
+      "@garage/clean-ports-climate-planning-reporting": [
+        "libs/forms/clean-ports/clean-ports-climate-planning-reporting/src/index.ts"
+      ],
+      "@garage/clean-ports-scrappage-eligibility": [
+        "libs/forms/clean-ports/clean-ports-scrappage-eligibility/src/index.ts"
+      ],
+      "@garage/clean-ports-scrappage-evidence": [
+        "libs/forms/clean-ports/clean-ports-scrappage-evidence/src/index.ts"
+      ],
+      "@garage/clean-ports-technology-deployment": [
+        "libs/forms/clean-ports/clean-ports-technology-deployment/src/index.ts"
+      ],
+      "@garage/clean-ports-zero-emission-reporting": [
+        "libs/forms/clean-ports/clean-ports-zero-emission-reporting/src/index.ts"
+      ],
+      "@garage/csb": ["libs/programs/csb/src/index.ts"],
+      "@garage/csb-eligibility": ["libs/forms/csb/csb-eligibility/src/index.ts"],
+      "@garage/csb-project-reporting": ["libs/forms/csb/csb-project-reporting/src/index.ts"],
+      "@garage/csb-utility-partnership": ["libs/forms/csb/csb-utility-partnership/src/index.ts"],
       "@garage/dashboard": ["libs/dashboard/src/index.ts"],
+      "@garage/dera": ["libs/programs/dera/src/index.ts"],
+      "@garage/dera-eligibility": ["libs/forms/dera/dera-eligibility/src/index.ts"],
+      "@garage/dera-reporting": ["libs/forms/dera/dera-reporting/src/index.ts"],
+      "@garage/dera-scrappage": ["libs/forms/dera/dera-scrappage/src/index.ts"],
       "@garage/home": ["libs/home/src/index.ts"],
       "@garage/login": ["libs/login/src/index.ts"],
       "@garage/plugin": ["tools/garage-plugin/src/index.ts"],

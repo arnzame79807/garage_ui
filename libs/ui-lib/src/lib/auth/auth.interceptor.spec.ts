@@ -19,7 +19,9 @@ describe('authInterceptor', () => {
   it('adds a bearer token when signed in', () => {
     const { http, ctrl } = setup(true);
     http.get('/api/me').subscribe();
-    expect(ctrl.expectOne('/api/me').request.headers.get('Authorization')).toBe('Bearer test-token');
+    expect(ctrl.expectOne('/api/me').request.headers.get('Authorization')).toBe(
+      'Bearer test-token',
+    );
   });
 
   it('leaves requests alone when anonymous', () => {

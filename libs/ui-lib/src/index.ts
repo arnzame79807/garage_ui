@@ -9,6 +9,7 @@ export * from './lib/design/alert/alert.component';
 export * from './lib/design/app-header/app-header.component';
 export * from './lib/design/button/button.component';
 export * from './lib/design/card/card.component';
+export * from './lib/design/form-catalog/form-catalog.component';
 
 // Form components
 export * from './lib/forms/form-flow/form-flow-shell.component';

@@ -17,9 +17,7 @@ export abstract class FormFlowState<T extends object> {
   /** Step keys in order; used to decide whether the flow can be submitted. */
   protected abstract readonly stepKeys: readonly string[];
 
-  readonly isComplete = computed(() =>
-    this.stepKeys.every((key) => this._completed().has(key)),
-  );
+  readonly isComplete = computed(() => this.stepKeys.every((key) => this._completed().has(key)));
 
   /** Merge a step's values into the flow and mark the step done. */
   completeStep(stepKey: string, values: Partial<T>): void {

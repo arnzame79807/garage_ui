@@ -12,11 +12,13 @@ describe('ReviewStepComponent', () => {
 <% steps.forEach(function (s) { %>    state.completeStep('<%= s.key %>', { <%= s.propertyName %>: { example: '<%= s.label %>' } });
 <% }) %>
     const fixture = TestBed.createComponent(ReviewStepComponent);
+    fixture.detectChanges();
     await fixture.whenStable();
     const el: HTMLElement = fixture.nativeElement;
     expect(el.textContent).toContain('example: <%= steps[0].label %>');
 
     (el.querySelector('button') as HTMLButtonElement).click();
+    fixture.detectChanges();
     await fixture.whenStable();
 
     expect(el.textContent).toContain('Submitted');

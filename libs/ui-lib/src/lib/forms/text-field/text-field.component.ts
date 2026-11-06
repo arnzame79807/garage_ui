@@ -7,8 +7,10 @@ let nextId = 0;
 export const DEFAULT_ERROR_MESSAGES: Record<string, (e: unknown) => string> = {
   required: () => 'This field is required.',
   email: () => 'Enter a valid email address.',
-  minlength: (e) => `Enter at least ${(e as { requiredLength: number }).requiredLength} characters.`,
-  maxlength: (e) => `Enter no more than ${(e as { requiredLength: number }).requiredLength} characters.`,
+  minlength: (e) =>
+    `Enter at least ${(e as { requiredLength: number }).requiredLength} characters.`,
+  maxlength: (e) =>
+    `Enter no more than ${(e as { requiredLength: number }).requiredLength} characters.`,
   pattern: () => 'The format is not valid.',
 };
 
@@ -59,7 +61,9 @@ export class TextFieldComponent implements ControlValueAccessor {
     const errors: ValidationErrors | null | undefined = this.ngControl?.control?.errors;
     if (!this.invalid || !errors) return null;
     const [key, detail] = Object.entries(errors)[0];
-    return this.messages()[key] ?? DEFAULT_ERROR_MESSAGES[key]?.(detail) ?? 'This value is not valid.';
+    return (
+      this.messages()[key] ?? DEFAULT_ERROR_MESSAGES[key]?.(detail) ?? 'This value is not valid.'
+    );
   }
 
   protected handleInput(event: Event): void {

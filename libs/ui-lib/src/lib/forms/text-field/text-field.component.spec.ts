@@ -5,7 +5,12 @@ import { TextFieldComponent } from './text-field.component';
 
 @Component({
   imports: [ReactiveFormsModule, TextFieldComponent],
-  template: `<garage-text-field label="Email" type="email" hint="Work email" [formControl]="email" />`,
+  template: `<garage-text-field
+    label="Email"
+    type="email"
+    hint="Work email"
+    [formControl]="email"
+  />`,
 })
 class HostComponent {
   readonly email = new FormControl('', {
@@ -17,6 +22,7 @@ class HostComponent {
 describe('TextFieldComponent', () => {
   async function setup() {
     const fixture = TestBed.createComponent(HostComponent);
+    fixture.detectChanges();
     await fixture.whenStable();
     const el: HTMLElement = fixture.nativeElement;
     const input = el.querySelector('input') as HTMLInputElement;

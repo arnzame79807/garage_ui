@@ -5,7 +5,13 @@ test.describe('design guide', () => {
     await page.goto('/');
     const nav = page.getByRole('navigation', { name: 'Design guide' });
 
-    for (const label of ['Design tokens', 'Buttons', 'Form fields', 'Cards & alerts', 'Form flow']) {
+    for (const label of [
+      'Design tokens',
+      'Buttons',
+      'Form fields',
+      'Cards, alerts & catalog',
+      'Form flow',
+    ]) {
       await nav.getByRole('link', { name: label }).click();
       await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible();
     }

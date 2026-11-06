@@ -10,11 +10,17 @@ import { AlertComponent, AuthService, ButtonComponent, TextFieldComponent } from
     <h1>Reset your password</h1>
     @if (sent()) {
       <garage-alert tone="success">
-        If an account exists for {{ form.getRawValue().email }}, you'll receive reset instructions shortly.
+        If an account exists for {{ form.getRawValue().email }}, you'll receive reset instructions
+        shortly.
       </garage-alert>
     } @else {
       <form class="garage-stack" [formGroup]="form" (ngSubmit)="submit()" novalidate>
-        <garage-text-field label="Email" type="email" autocomplete="username" formControlName="email" />
+        <garage-text-field
+          label="Email"
+          type="email"
+          autocomplete="username"
+          formControlName="email"
+        />
         <button garageButton type="submit" [block]="true">Send reset link</button>
       </form>
     }
